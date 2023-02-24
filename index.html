@@ -13,21 +13,47 @@
   </head>
   <body>
     <header>
-      <h1 id="appTitle">🍿Film Finder🍿</h1>
+      <h1 id="appTitle">🍿Find a Film🍿</h1>
+      <br>
+      <pre>Powered by The Movie Database</pre>
+      <button class="optionButton" id="movieSearchButton">Search for a Film</button>
+      <button class="optionButton" id="movieGameButton">Random Movie Game</button>
+
     </header>
-    <form id="genreForm">
-      <label>Choose a genre:</label>
-      <select name="genres" id="genres">
-      </select>
-    </form>
-    <button id="playBtn">Let's Play!</button>
+
+    <section id="movieSearch">
+      <h2>Film Searcher</h2>
+      <p>Please use the input below to search for your desired movie. If the movie has a common name, this will only display the first 10 results.</p>
+      <div id="searchForm">
+        <label for="search">Please enter in a movie name:</label>
+        <input type="text" id="search" name="search" required minlength="1">
+        <button id="searchBtn">Search</button>
+      </div>
+    </section>
+
+    <section id="movieGame">
+      <h2>Random Movie Game</h2>
+      <p>Select a movie genre and random movies from that genre will appear. If you like the movie, click the like button. If you don't like the movie, click the dislike button. Your score for how many clicks will be tracked.</p>
+      <form id="genreForm">
+        <label>Choose a genre:</label>
+        <select name="genres" id="genres">
+        </select>
+      </form>
+      <button id="playBtn">Let's Play!</button>
+      <div id="ratings">
+        <p>Movies Liked: <span id="likes">0</span></p>
+        <p>Movies Disliked: <span id="dislikes">0</span></p>
+      </div>
+      <div id="likeOrDislikeBtns" hidden>
+        <button id="likeBtn"><i class="fa-solid fa-thumbs-up"></i></button>
+        <button id="dislikeBtn"><i class="fa-solid fa-thumbs-down"></i></button>
+      </div>
+    </section>
+
+    <div id="results"></div>
     <div id="movieInfo">
       <div id="moviePoster"></div>
       <div id="movieText"></div>
-    </div>
-    <div id="likeOrDislikeBtns" hidden>
-      <button id="likeBtn"><i class="fa-solid fa-thumbs-up"></i></button>
-      <button id="dislikeBtn"><i class="fa-solid fa-thumbs-down"></i></button>
     </div>
   </body>
 </html>

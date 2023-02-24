@@ -3,15 +3,32 @@ body {
     color: #0a0408;
 }
 
-#appTitle {
+header {
     text-align: center;
+}
+
+#appTitle {
     margin: 0px auto;
     display: block;
     font-family: 'Staatliches', sans-serif;
     font-size: 80px;
 }
 
-#genreForm, #playBtn {
+.optionButton {
+    margin: 5px;
+}
+
+#movieSearch, #movieGame {
+    display: none;
+}
+
+section h2, section p {
+    color: #fff;
+    text-align: center;
+    margin: 1rem 5vw;
+}
+
+#genreForm, #searchForm, #playBtn {
     text-align: center;
     margin: 0px auto;
     display: block;
@@ -49,9 +66,10 @@ img#moviePoster {
 
 #movieTitle, #movieOverview {
     padding:  32px;
+
 }
 
-#playBtn {
+.optionButton, input[type="submit"], #playBtn {
     margin-top: 20px;
     font-size: 25px;
     padding: 7px 10px;
@@ -60,6 +78,19 @@ img#moviePoster {
     background-color: #B97828;
     color: #fdc238;
     cursor:  pointer;
+}
+
+#ratings {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    color: #fff;
+}
+
+#ratings p {
+    margin: 0 30px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 label {
@@ -71,6 +102,10 @@ label {
 select {
     width: 200px;
     height: auto;
+}
+
+pre {
+    color: #fff;
 }
 
 #likeOrDislikeBtns {
@@ -94,4 +129,25 @@ select {
 #dislikeBtn {
     background-color: #c74a4a;
     color: #910000;
+}
+
+#results {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+#results a {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+#results a:hover {
+    background-color: #000;
+    border-color: #000;
 }

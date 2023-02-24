@@ -1,3 +1,9 @@
+// Get user-entered input to search for a movie
+const getEnteredMovie = () => {
+    return document.getElementById('search').value;
+}
+
+
 // Populate dropdown menu with all the available genres
 const populateGenreDropdown = (genres) => {
     const select = document.getElementById('genres')
@@ -12,8 +18,7 @@ const populateGenreDropdown = (genres) => {
 
 // Returns the current genre selection from the dropdown menu
 const getSelectedGenre = () => {
-    const selectedGenre = document.getElementById('genres').value;
-    return selectedGenre;
+    return document.getElementById('genres').value;
 };
 
 // Displays the like and dislike buttons on the page
@@ -30,14 +35,29 @@ const clearCurrentMovie = () => {
     movieTextDiv.innerHTML = '';
 }
 
+const storeRating = (rating) => {
+    const likes = document.getElementById('likes');
+    const dislikes = document.getElementById('dislikes');
+
+    if (rating) {
+        likesCounter++;
+        likes.innerHTML = likesCounter;
+    } else {
+        dislikesCounter++;
+        dislikes.innerHTML = dislikesCounter;
+    }
+}
+
 // After liking a movie, clears the current movie from the screen and gets another random movie
 const likeMovie = () => {
+    storeRating(true);
     clearCurrentMovie();
     showRandomMovie();
 };
 
 // After disliking a movie, clears the current movie from the screen and gets another random movie
 const dislikeMovie = () => {
+    storeRating(false);
     clearCurrentMovie();
     showRandomMovie();
 };
@@ -74,8 +94,7 @@ const createMovieOverview = (overview) => {
 // Returns a random movie from the first page of movies
 const getRandomMovie = (movies) => {
     const randomIndex = Math.floor(Math.random() * movies.length);
-    const randomMovie = movies[randomIndex];
-    return randomMovie;
+    return movies[randomIndex];
 };
 
 // Uses the DOM to create HTML to display the movie
